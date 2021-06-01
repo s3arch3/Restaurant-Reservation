@@ -12,7 +12,7 @@ session_start();
 
 <head>
     <!-- //TODO: replace the favicon here -->
-    <link rel="icon" type="image/png" sizes="32x32" href="img/spider.bmp">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo/finedemic-default.png">
     <!-- //TODO: replace the title here -->
     <title>Monkies. Restaurant</title>
     <!-- //* visit https://www.w3schools.com/tags/tag_meta.asp about metadata tags. -->
@@ -38,19 +38,16 @@ session_start();
         max-width: 260px;
     }
 
-    .container {
-        background: #f9f9f9;
-    }
-
     .img {
         margin: 5px;
     }
 
     .logo img {
-        width: 150px;
-        height: 250px;
-        margin-top: 90px;
-        margin-bottom: 40px;
+        max-width: 100%;
+        width: 800px;
+        height: auto;
+        margin-top: 200px;
+        margin-bottom: 60px;
     }
 </style>
 
@@ -59,9 +56,7 @@ session_start();
     <nav class="navbar navbar-expand-md navbar-light fixed-top">
         <div class="container">
             <!-- //* goes back to homepage button in the navbar -->
-            <a class="navbar-brand" href="../index.php">
-                <!-- //TODO: change title here -->
-                <strong><em>Chocolate & Moer</em></strong>
+            <a class="navbar-brand" href="#home"> <img src="img/logo/finedemic-blk.png">
             </a>
             <!-- //* this is the hamburger icon that you see when it's on mobile mode -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navi">
@@ -102,10 +97,13 @@ session_start();
                     else {
                         echo '
                         <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
                         <a class="nav-link" href="#aboutus">About Us</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="#gallery">Gallery</a>
+                        <a class="nav-link" href="#menu">Menu</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#reservation">Reservation</a>
@@ -129,8 +127,8 @@ session_start();
                     echo '
                     <div>
                     <ul class="navbar-nav ml-auto">
-			        <li><a class="nav-link fa fa-sign-in" data-toggle="modal" data-target="#myModal_reg">&nbsp;Sing Up</a></li>
-			        <li><a class="nav-link fa fa-user-plus" data-toggle="modal" data-target="#myModal_login">&nbsp;Login</a></li>
+			        <li><a class="nav-link" id="sign_up_btn" data-toggle="modal" data-target="#myModal_reg">&nbsp;Sign Up</a></li>
+			        <li><a class="nav-link" id="sign_in_btn" data-toggle="modal" data-target="#myModal_login">&nbsp;Login</a></li>
                     </ul>
                     </div>
                     ';

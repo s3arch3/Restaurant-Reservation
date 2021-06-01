@@ -2,13 +2,14 @@
 require "pages/header.php";
 ?>
 
-<header class="header">
+<header class="header" id="home">
     <div class="row">
         <div class="col-md-12 text-center">
-            <a class="logo"><img src="img/logo.png" alt="logo"></a>
+            <a class="logo"><img src="img/logo/logo-finedemic.png" alt="logo"></a>
         </div>
+
         <div class="col-md-12 text-center">
-            <button type="button" onclick="window.location.href='pages/reservation.php'" class="btn btn-outline-light btn-lg"><em>Make a Reservation Now!</em></button>
+            <button type="button" onclick="window.location.href='pages/reservation.php'" class="btn  btn-primary" id="header_btn">Reserve now</button>
         </div>
     </div>
 </header>
@@ -20,7 +21,7 @@ require "pages/header.php";
 <section id="aboutus">
 
     <div class="container">
-        <h3 class="text-center"><br><br>Chocolate & Moer</h3>
+        <h3 class="text-center"><b><br><br>Finedemic Restaurant</h3></b>
         <div class="row">
             <!--carousel-->
             <div class="col-sm"><br><br>
@@ -32,17 +33,17 @@ require "pages/header.php";
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img class="d-block w-100" src="img/3.jpeg" alt="First slide">
+                            <img class="d-block w-100" src="img/home/menu-3.jpg" alt="First slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="img/4.jpeg" alt="Second slide">
+                            <img class="d-block w-100" src="img/home/menu-2.jpg" alt="Second slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="img/5.jpeg" alt="Third slide">
+                            <img class="d-block w-100" src="img/home/menu-1.jpg" alt="Third slide">
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="carousel-control-prev-icon" id="#custom-icon-prev" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
                     <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
@@ -58,9 +59,8 @@ require "pages/header.php";
                 <div class="arranging"><br>
                     <hr>
                     <h4 class="text-center">Our Story</h4>
-                    <p><br>The restaurant MonkaS, first opened in 2004 in “Psiri”, one of the oldest districts of Athens in the historical center of the city. In 2010 , the restaurant was awarded its first Michelin star and has retained it since.<br><br>
-                        The same year, the restaurant relocated to the 6th floor of the Onassis Cultural Centre in Syngrou Avenue and was recently redesigned by award-winning architectural firm Divercity.In warmer months of the year the restaurant moves
-                        to the 7th floor of the building, offering a unique outdoor setting with panoramic view of the Acropolis, Lycebettus hill and the city skyline.<br><br><br></p>
+                    <p class="text-justify"><br>The Finedemic is an online restaurant first established in 2021, by our founders Barruela, Brigoli, Garcia, Vibiesca and Villanueva.<br><br>
+                        During the pandemic of the COVID-19 people within the Philippines has struggled to live in isolation, as it is a well needed precaution to fight against the pandemic, people could not be of close proximity of each other, go on to travel places they have not been, or even buy food for daily consumption. Hence, by our founders Finedemic is created, to help those who struggle during these trying times, providing immaculate service for our customers.<br><br><br></p>
                     <hr>
                 </div>
             </div>
@@ -72,10 +72,10 @@ require "pages/header.php";
 <div class="header2">
 </div>
 
-<!----gallery -->
-<div class id="gallery"><br>
+<!----menu -->
+<div class id="menu"><br>
     <div class="container">
-        <h3 class="text-center"><br>Gallery<br><br></h3>
+        <h3 class="text-center"><br>Menu<br><br></h3>
         <div class="d-flex flex-row flex-wrap justify-content-center">
             <div class="d-flex flex-column">
                 <img src="img/1.jpg" class="img-fluid">
