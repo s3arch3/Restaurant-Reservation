@@ -136,39 +136,38 @@ session_start();
                     ';
                 }
                 ?>
-
             </div>
         </div>
     </nav>
 
+    <!-- //* the modal screen that appears when login button is clicked -->
     <div class="container">
-        <!-- The Modal -->
+        <!-- //* the modal -->
         <div class="modal fade" id="myModal_login">
             <div class="modal-dialog">
                 <div class="modal-content">
-
-                    <!-- Modal Header -->
+                    <!-- //* modal header which contains "Login" and "x" button -->
                     <div class="modal-header">
+                        <!-- //* login text -->
                         <h4 class="modal-title">Login</h4>
+                        <!-- //* close button -->
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
 
-                    <!-- Modal body -->
+                    <!-- //* modal body -->
                     <div class="modal-body">
-
+                        <!-- //* php code to show login screen and error handling of credentials -->
                         <?php
                         if (isset($_GET['error1'])) {
-
-                            //script for modal to appear when error
-                            echo '  <script>
-                    $(document).ready(function(){
-                    $("#myModal_login").modal("show");
-                    });
-                    </script> ';
-
-
-                            //error handling of log in
-
+                            //* script for modal to appear when error
+                            echo '
+                                <script>
+                                $(document).ready(function(){
+                                $("#myModal_login").modal("show");
+                                });
+                                </script>
+                            ';
+                            //* error handling of log in
                             if ($_GET['error1'] == "emptyfields") {
                                 echo '<h5 class="text-danger text-center">Fill all fields, Please try again!</h5>';
                             } else if ($_GET['error1'] == "error") {
@@ -181,25 +180,30 @@ session_start();
                                 echo '<h5 class="text-danger text-center">Username or email not found, Please try again!</h5>';
                             }
                         }
+                        //* adds a line after that error message
                         echo '<br>';
                         ?>
-
+                        <!-- //* this is for the signin form -->
                         <div class="signin-form">
+                            <!-- //* form for the signing in form -->
                             <form action="includes/login.inc.php" method="post">
                                 <p class="hint-text">If you have already an account please log in.</p>
+                                <!-- //* for the username/email field -->
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="mailuid" placeholder="Username Or Email" required="required">
                                 </div>
+                                <!-- //* for the password field -->
                                 <div class="form-group">
                                     <input type="password" class="form-control" name="pwd" placeholder="Password" required="required">
                                 </div>
+                                <!-- //* for the submit button -->
                                 <div class="form-group">
                                     <button type="submit" name="login-submit" class="btn btn-dark btn-lg btn-block">Log In</button>
                                 </div>
                             </form>
                         </div>
                     </div>
-                    <!-- Modal footer -->
+                    <!-- //* modal footer which contains "Close" button -->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     </div>
@@ -208,32 +212,33 @@ session_start();
         </div>
     </div>
 
-
+    <!-- //* the modal screen that appears when signin button is clicked -->
     <div class="container">
-        <!-- The Modal -->
+        <!-- //* the modal -->
         <div class="modal fade" id="myModal_reg">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <!-- Modal Header -->
+                    <!-- //* modal header which contains "Login" and "x" button -->
                     <div class="modal-header">
+                        <!-- //* register text -->
                         <h4 class="modal-title">Register</h4>
+                        <!-- //* close button -->
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
-                    <!-- Modal body -->
+                    <!-- //* modal body -->
                     <div class="modal-body">
-
+                        <!-- //* php code to show login screen and error handling of credentials -->
                         <?php
                         if (isset($_GET['error'])) {
-                            //script for modal to appear when error
-                            echo '  <script>
+                            //* script for modal to appear when error
+                            echo '
+                                <script>
                                 $(document).ready(function(){
                                 $("#myModal_reg").modal("show");
                                 });
-                            </script> ';
-
-
-                            //error handling for errors and success --sign up form
-
+                                </script>
+                            ';
+                            //* error handling of log in
                             if ($_GET['error'] == "emptyfields") {
                                 echo '<h5 class="bg-danger text-center">Fill all fields, Please try again!</h5>';
                             } else if ($_GET['error'] == "invalidemailusername") {
@@ -254,52 +259,61 @@ session_start();
                                 echo '<h5 class="bg-danger text-center">Error Occured, Try again!</h5>';
                             }
                         }
+                        //* script for modal to appear when success
                         if (isset($_GET['signup'])) {
-                            //script for modal to appear when success
-                            echo '  <script>
+                            echo '
+                                <script>
                                 $(document).ready(function(){
                                 $("#myModal_reg").modal("show");
                                 });
-                            </script> ';
-
+                                </script>
+                            ';
+                            //* success message
                             if ($_GET['signup'] == "success") {
                                 echo '<h5 class="bg-success text-center">Sign up was successfull! Please Log in!</h5>';
                             }
                         }
+                        //* adds a line after that error message
                         echo '<br>';
                         ?>
-
-                        <!---sign up form -->
+                        <!-- //* this is for the signup form -->
                         <div class="signup-form">
                             <form action="includes/signup.inc.php" method="post">
+                                <!-- //* welcoming message for create account -->
                                 <p class="hint-text">Create your account. It's free and only takes a minute.</p>
+                                <!-- //* username area -->
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="uid" placeholder="Username" required="required">
                                     <small class="form-text text-muted">Username must be 4-20 characters long</small>
                                 </div>
+                                <!-- //* email area -->
                                 <div class="form-group">
                                     <input type="email" class="form-control" name="mail" placeholder="Email" required="required">
                                 </div>
+                                <!-- //* password area -->
                                 <div class="form-group">
                                     <input type="password" class="form-control" name="pwd" placeholder="Password" required="required">
                                     <small class="form-text text-muted">Password must be 6-20 characters long</small>
                                 </div>
+                                <!-- //* password repeat area -->
                                 <div class="form-group">
                                     <input type="password" class="form-control" name="pwd-repeat" placeholder="Confirm Password" required="required">
                                 </div>
+                                <!-- //* terms of use and privacy area -->
                                 <div class="form-group">
                                     <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
                                 </div>
+                                <!-- //* click to submit/register -->
                                 <div class="form-group">
                                     <button type="submit" name="signup-submit" class="btn btn-dark btn-lg btn-block">Register Now</button>
                                 </div>
                             </form>
+                            <!-- //* gets the user to sign in modal -->
                             <div class="text-center">Already have an account? <a href="#">Sign in</a></div>
                         </div>
                     </div>
-                    <!-- Modal footer -->
+                    <!-- //* modal footer which contains "Close" button -->
                     <div class="modal-footer">
-
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     </div>
                 </div>
