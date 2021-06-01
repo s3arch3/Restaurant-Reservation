@@ -1,7 +1,7 @@
-//TODO: When something needs to be done.
-//! When something should be aware/cautious of.
-//* When something is informational.
-//? When something is questionable.
+<!-- //TODO: When something needs to be done. -->
+<!-- //! When something should be aware/cautious of. -->
+<!-- //* When something is informational. -->
+<!-- //? When something is questionable. -->
 
 <?php
 session_start();
@@ -11,28 +11,28 @@ session_start();
 <html lang="en">
 
 <head>
-    //TODO: replace the favicon here
+    <!-- //TODO: replace the favicon here -->
     <link rel="icon" type="image/png" sizes="32x32" href="img/spider.bmp">
-    //TODO: replace the title here
+    <!-- //TODO: replace the title here -->
     <title>Monkies. Restaurant</title>
-    //* visit https://www.w3schools.com/tags/tag_meta.asp about metadata tags.
+    <!-- //* visit https://www.w3schools.com/tags/tag_meta.asp about metadata tags. -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    //* links to css folder for "additional styles"
+    <!-- //* links to css folder for "additional styles" -->
     <link href="css/style.css" rel="stylesheet" type="text/css">
-    //* links to bootstrap cdn css
+    <!-- //* links to bootstrap cdn css -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-    //* links to font-awesome cdn css
+    <!-- //* links to font-awesome cdn css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    //* links to jquery cdn js
+    <!-- //* links to jquery cdn js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 </head>
 
-//? This style tag is questionable. Are the styles used below used in other places?
-//! The styles below may affect with the other styles that you design.
+<!-- //? This style tag is questionable. Are the styles used below used in other places? -->
+<!-- //! The styles below may affect with the other styles that you design. -->
 <style>
     .flex-column {
         max-width: 260px;
@@ -55,22 +55,22 @@ session_start();
 </style>
 
 <body>
-    //* the main navbar of this website
+    <!-- //* the main navbar of this website -->
     <nav class="navbar navbar-expand-md navbar-light fixed-top">
         <div class="container">
-            //* goes back to homepage button in the navbar
+            <!-- //* goes back to homepage button in the navbar -->
             <a class="navbar-brand" href="../index.php">
-                //TODO: change title here
+                <!-- //TODO: change title here -->
                 <strong><em>Chocolate & Moer</em></strong>
             </a>
-            //* this is the hamburger icon that you see when it's on mobile mode
+            <!-- //* this is the hamburger icon that you see when it's on mobile mode -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navi">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navi">
                 <ul class="navbar-nav mr-auto">
-                    //* this is a PHP code that decides which navbar layout to show based on who's logged in and who's not
+                    <!-- //* this is a PHP code that decides which navbar layout to show based on who's logged in and who's not -->
                     <?php
                     //set navigation bar when logged in
                     if (isset($_SESSION['user_id'])) {
@@ -83,7 +83,6 @@ session_start();
                             <a class="nav-link" href="view_reservations.php">View Reservations</a>
                         </li>
                         ';
-
                         //* set navigation bar when logged in and role of admin
                         if ($_SESSION['role'] == 2) {
                             echo '
@@ -99,29 +98,28 @@ session_start();
                             ';
                         }
                     }
-                    //main page not logged in navigation bar
+                    //* when not logged in (About Us | Gallery | Reservation | Find Us) on the navbar
                     else {
                         echo '
-                    <li class="nav-item">
-	                 <a class="nav-link" href="#aboutus">About Us</a>
-	                </li>
-	            <li class="nav-item">
-	                <a class="nav-link" href="#gallery">Gallery</a>
-	            </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#reservation">Reservation</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#footer">Find Us</a>
-                    </li>
-                    ';
+                        <li class="nav-item">
+                        <a class="nav-link" href="#aboutus">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#reservation">Reservation</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#footer">Find Us</a>
+                        </li>
+                        ';
                     }
                     ?>
-
                 </ul>
 
                 <?php
-                //log out button when user is logged in
+                //* log out button when user is logged in
                 if (isset($_SESSION['user_id'])) {
                     echo '
                     <form class="navbar-form navbar-right" action="includes/logout.inc.php" method="post">
@@ -131,8 +129,8 @@ session_start();
                     echo '
                     <div>
                     <ul class="navbar-nav ml-auto">
-			<li><a class="nav-link fa fa-sign-in" data-toggle="modal" data-target="#myModal_reg">&nbsp;Sing Up</a></li>
-			<li><a class="nav-link fa fa-user-plus" data-toggle="modal" data-target="#myModal_login">&nbsp;Login</a></li>
+			        <li><a class="nav-link fa fa-sign-in" data-toggle="modal" data-target="#myModal_reg">&nbsp;Sing Up</a></li>
+			        <li><a class="nav-link fa fa-user-plus" data-toggle="modal" data-target="#myModal_login">&nbsp;Login</a></li>
                     </ul>
                     </div>
                     ';
