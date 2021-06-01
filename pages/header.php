@@ -11,10 +11,8 @@ session_start();
 <html lang="en">
 
 <head>
-    <!-- //TODO: replace the favicon here -->
     <link rel="icon" type="image/png" sizes="32x32" href="img/logo/finedemic-default.png">
-    <!-- //TODO: replace the title here -->
-    <title>Monkies. Restaurant</title>
+    <title>Finedemic Restaurant</title>
     <!-- //* visit https://www.w3schools.com/tags/tag_meta.asp about metadata tags. -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
