@@ -1,3 +1,8 @@
+//TODO: When something needs to be done.
+//! When something should be aware/cautious of.
+//* When something is informational.
+//? When something is questionable.
+
 <?php
 session_start();
 ?>
@@ -6,29 +11,28 @@ session_start();
 <html lang="en">
 
 <head>
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-    <!--favicon-->
+    //TODO: replace the favicon here
+    <link rel="icon" type="image/png" sizes="32x32" href="img/spider.bmp">
+    //TODO: replace the title here
     <title>Monkies. Restaurant</title>
+    //* visit https://www.w3schools.com/tags/tag_meta.asp about metadata tags.
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--style.css document-->
+    //* links to css folder for "additional styles"
     <link href="css/style.css" rel="stylesheet" type="text/css">
-    <!--font-awesome-->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <!--bootstrap-->
+    //* links to bootstrap cdn css
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-    <!--font-awesome-->
+    //* links to font-awesome cdn css
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!--googleapis jquery-->
+    //* links to jquery cdn js
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!--bootstrap-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <!--bootstrap-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-    <!--bootstrap-->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 </head>
 
+//? This style tag is questionable. Are the styles used below used in other places?
+//! The styles below may affect with the other styles that you design.
 <style>
     .flex-column {
         max-width: 260px;
@@ -51,42 +55,48 @@ session_start();
 </style>
 
 <body>
-    <!---navbar--->
+    //* the main navbar of this website
     <nav class="navbar navbar-expand-md navbar-light fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.php">
+            //* goes back to homepage button in the navbar
+            <a class="navbar-brand" href="../index.php">
+                //TODO: change title here
                 <strong><em>Chocolate & Moer</em></strong>
             </a>
+            //* this is the hamburger icon that you see when it's on mobile mode
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navi">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navi">
                 <ul class="navbar-nav mr-auto">
-
-
+                    //* this is a PHP code that decides which navbar layout to show based on who's logged in and who's not
                     <?php
                     //set navigation bar when logged in
                     if (isset($_SESSION['user_id'])) {
+                        //* default setting only show the "reservation" and "view reservations" buttons for normal users
                         echo '
-                    <li class="nav-item">
-                        <a class="nav-link" href="reservation.php" >New Reservation</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="view_reservations.php" >View Reservations</a>
-                    </li>';
+                        <li class="nav-item">
+                            <a class="nav-link" href="reservation.php">New Reservation</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="view_reservations.php">View Reservations</a>
+                        </li>
+                        ';
 
-                        //set navigation bar when logged in and role of admin
+                        //* set navigation bar when logged in and role of admin
                         if ($_SESSION['role'] == 2) {
                             echo '
-                    <li class="nav-item">
-                        <a class="nav-link" href="schedule.php" >Edit Schedule</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="tables.php" >Edit Tables</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="view_tables.php" >View Tables</a>
-                    </li>';
+                            <li class="nav-item">
+                                <a class="nav-link" href="schedule.php">Edit Schedule</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="tables.php">Edit Tables</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="view_tables.php">View Tables</a>
+                            </li>
+                            ';
                         }
                     }
                     //main page not logged in navigation bar
@@ -123,7 +133,7 @@ session_start();
                     <ul class="navbar-nav ml-auto">
 			<li><a class="nav-link fa fa-sign-in" data-toggle="modal" data-target="#myModal_reg">&nbsp;Sing Up</a></li>
 			<li><a class="nav-link fa fa-user-plus" data-toggle="modal" data-target="#myModal_login">&nbsp;Login</a></li>
-                    </ul> 
+                    </ul>
                     </div>
                     ';
                 }
@@ -151,7 +161,7 @@ session_start();
                         <?php
                         if (isset($_GET['error1'])) {
 
-                            //script for modal to appear when error 
+                            //script for modal to appear when error
                             echo '  <script>
                     $(document).ready(function(){
                     $("#myModal_login").modal("show");
@@ -216,7 +226,7 @@ session_start();
 
                         <?php
                         if (isset($_GET['error'])) {
-                            //script for modal to appear when error 
+                            //script for modal to appear when error
                             echo '  <script>
                                 $(document).ready(function(){
                                 $("#myModal_reg").modal("show");

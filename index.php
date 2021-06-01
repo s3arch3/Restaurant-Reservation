@@ -8,7 +8,7 @@ require "pages/header.php";
             <a class="logo"><img src="img/logo.png" alt="logo"></a>
         </div>
         <div class="col-md-12 text-center">
-            <button type="button" onclick="window.location.href='reservation.php'" class="btn btn-outline-light btn-lg"><em>Make a Reservation Now!</em></button>
+            <button type="button" onclick="window.location.href='pages/reservation.php'" class="btn btn-outline-light btn-lg"><em>Make a Reservation Now!</em></button>
         </div>
     </div>
 </header>
