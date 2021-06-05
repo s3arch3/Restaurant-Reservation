@@ -1,5 +1,3 @@
-<b>PRESS CTRL+SHIFT+V TO PREVIEW</b>
-
 <h1>Finedemic Reservation System<h1>
 <em>Add and cross out list items below.<em>
 
